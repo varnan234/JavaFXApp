@@ -1,0 +1,13 @@
+--module-path
+/Applications/SceneBuilder.app
+--add-modules
+javafx.controls,javafx.fxml
+-Dfile.encoding=UTF-8
+-Dstdout.encoding=UTF-8
+-Dstderr.encoding=UTF-8
+-p
+/Users/priyadarshigoenka/.p2/pool/plugins/org.eclipse.fx.ide.css.jfx8_3.10.0.202303150700.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.base.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.controls.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.web.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.swing.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.graphics.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.media.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx-swt.jar:/Users/priyadarshigoenka/Downloads/javafx-sdk-21.0.3/lib/javafx.fxml.jar
+-classpath
+/Users/priyadarshigoenka/eclipse-workspace/JavaFXApp/bin
+-XX:+ShowCodeDetailsInExceptionMessages
+com.example.registraionlogin.MainApp
