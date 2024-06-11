@@ -4,13 +4,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.varnan.RegistrationController" style="-fx-padding: 20;">
-    <Label text="Registration Page" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
-    <Label text="Username:"/>
-    <TextField fx:id="usernameField"/>
-    <Label text="Password:"/>
-    <PasswordField fx:id="passwordField"/>
-    <Label text="Confirm Password:"/>
-    <PasswordField fx:id="confirmPasswordField"/>
-    <Button text="Register" onAction="#handleRegisterButtonAction" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+<VBox spacing="10" alignment="CENTER"
+	xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.varnan.RegistrationController"
+	style="-fx-padding: 20;">
+	<Label text="Registration Page"
+		style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+	<Label text="Username:" />
+	<TextField fx:id="usernameField" />
+	<Label text="Password:" />
+	<PasswordField fx:id="passwordField" />
+	<Label text="Confirm Password:" />
+	<PasswordField fx:id="confirmPasswordField" />
+	<Button text="Register" onAction="#handleRegisterButtonAction"
+		style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+	<Label fx:id="statusLabel" text="" style="-fx-text-fill: green;" />
 </VBox>

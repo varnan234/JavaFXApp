@@ -2,20 +2,19 @@ package com.varnan;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Controller class for handling login.
- * 
- * @author Varnan Goenka
- * date 06/06/2024
- */
 public class LoginController {
 
     @FXML
@@ -24,11 +23,9 @@ public class LoginController {
     @FXML
     private PasswordField passwordField;
 
-    /**
-     * Handles the login button action.
-     * 
-     * @param event the action event
-     */
+    @FXML
+    private Label statusLabel;
+
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         String username = usernameField.getText();
@@ -47,27 +44,30 @@ public class LoginController {
             }
 
             if (found) {
-                showAlert(Alert.AlertType.INFORMATION, "Login Successful", "Welcome, " + username + "!");
+                loadRedirectPage();
             } else {
-                showAlert(Alert.AlertType.WARNING, "Login Failed", "Incorrect username or password.");
+                statusLabel.setText("Incorrect username or password.");
+                statusLabel.setStyle("-fx-text-fill: red;");
             }
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Error", "An error occurred while reading the user data.");
+            statusLabel.setText("An error occurred while reading the user data.");
+            statusLabel.setStyle("-fx-text-fill: red;");
         }
     }
 
-    /**
-     * Shows an alert dialog.
-     * 
-     * @param alertType the type of alert
-     * @param title the title of the alert
-     * @param message the message of the alert
-     */
-    private void showAlert(Alert.AlertType alertType, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setContentText(message);
-        alert.showAndWait();
+    private void loadRedirectPage() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("RedirectPage.fxml"));
+            Parent redirectRoot = loader.load();
+            Stage stage = (Stage) usernameField.getScene().getWindow();
+            stage.setScene(new Scene(redirectRoot, 800, 600));
+            stage.setTitle("Redirect Page");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            statusLabel.setText("Failed to load the redirect page.");
+            statusLabel.setStyle("-fx-text-fill: red;");
+        }
     }
 }
