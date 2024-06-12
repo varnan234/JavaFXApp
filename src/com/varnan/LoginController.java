@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,6 +14,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * @author Varnan
+ * date 10/06/2024
+ * A controller class for handling login functionality.
+ */
 public class LoginController {
 
     @FXML
@@ -26,6 +30,10 @@ public class LoginController {
     @FXML
     private Label statusLabel;
 
+    /**
+     * Handles the login button action.
+     * @param event The action event triggered by the login button.
+     */
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
         String username = usernameField.getText();
@@ -56,6 +64,9 @@ public class LoginController {
         }
     }
 
+    /**
+     * Loads the redirect page upon successful login.
+     */
     private void loadRedirectPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("RedirectPage.fxml"));
