@@ -25,4 +25,4 @@ SobiGobi,Sobi
 lol,lol
 HELLO,HELLO
 AD,ad
-bhadwa,chutiya
+
