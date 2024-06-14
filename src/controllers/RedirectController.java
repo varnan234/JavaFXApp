@@ -1,4 +1,4 @@
-package com.varnan;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.web.WebEngine;

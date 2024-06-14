@@ -1,4 +1,4 @@
-package com.varnan;
+package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -69,7 +69,7 @@ public class LoginController {
      */
     private void loadRedirectPage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("RedirectPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/RedirectPage.fxml"));
             Parent redirectRoot = loader.load();
             Stage stage = (Stage) usernameField.getScene().getWindow();
             stage.setScene(new Scene(redirectRoot, 800, 600));

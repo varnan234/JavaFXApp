@@ -1,4 +1,4 @@
-package com.varnan;
+package controllers;
 
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -76,7 +76,7 @@ public class RegistrationController {
      */
     private void loadLoginPage() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/LoginPage.fxml"));
             Parent loginRoot = loader.load();
             Stage stage = (Stage) usernameField.getScene().getWindow();
             stage.setScene(new Scene(loginRoot, 400, 300));
